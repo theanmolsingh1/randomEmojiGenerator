@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                display: flex;
+                height: 100vh;
+                width: 100%;
+                background-color: black;
+                color: white;
+                align-items: center;
+                justify-content: center;
+            }
+            .box {
+                display: flex;
+                flex-direction: column;
+                width: 1000px;
+                height: auto;
+                background-color:rgb(53, 21, 21);
+                border-radius: 20px;
+                box-shadow: brown -10px -10px 20px;
+                align-items: center;
+            }
+            
+
+        </style>
+    </head>
+
+    <body>
+        <div class="box"><h1 style="margin-bottom: 8px; margin-top: 20px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; text-shadow: 1px 1px 2px;">Check Your Mood by Emoji.</h1>
+        <button onclick="fun()" style="width: 80px; height: 40px; border-radius: 10px; background-color: red;"><b>Check</b></button>
+             <p id="ss"></p>
+             <p id="sd" style="margin-top: 0px;"></p>
+            <script>
+                let count = 0;
+                function fun(){
+                    if(count>=8) return;
+                    count++;
+                    let arr= ['😄','😀','😂','🙁','😐','😒','😎','😑','😝'];
+                    let d = Math.floor(Math.random()*9);
+                    let ff = document.getElementById("ss");
+                    let fd = document.getElementById("sd");
+                    ff.innerHTML = arr[d];
+                    ff.style.fontSize = "100px";
+
+                    fd.style.fontSize = "20px";
+                    if(count<8){
+                        fd.innerHTML = "Run Again 🙌 , Count left: " + (8-count); 
+                    }
+                    else{
+                        fd.innerHTML = "Come Next Time: Your reached the limit to check." 
+                    }
+                }
+            </script>
+    </div>
+    </body>
+</html>
